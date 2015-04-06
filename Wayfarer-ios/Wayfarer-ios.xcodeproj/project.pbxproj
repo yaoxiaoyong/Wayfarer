@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		110C61011A9A95A000548FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C61001A9A95A000548FAA /* AppDelegate.swift */; };
+		110C61061A9A95A000548FAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110C61041A9A95A000548FAA /* Main.storyboard */; };
+		110C61081A9A95A000548FAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110C61071A9A95A000548FAA /* Images.xcassets */; };
+		110C610B1A9A95A000548FAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C61091A9A95A000548FAA /* LaunchScreen.xib */; };
+		110C61171A9A95A000548FAA /* Wayfarer_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */; };
+		115D8E971AC6821500F4F2E8 /* Way.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E961AC6821500F4F2E8 /* Way.swift */; };
+		115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E991AC6842800F4F2E8 /* DataImporter.swift */; };
+		115D8E9C1AC6848700F4F2E8 /* WaysContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */; };
+		118641381ACF5AA00094A9D7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118641371ACF5AA00094A9D7 /* CollectionViewController.swift */; };
+		1186413A1ACF5AB50094A9D7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118641391ACF5AB50094A9D7 /* CollectionViewCell.swift */; };
+		1186413C1ACF5E230094A9D7 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1186413B1ACF5E230094A9D7 /* CollectionView.swift */; };
+		118641431AD0C79F0094A9D7 /* WayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118641421AD0C79F0094A9D7 /* WayDetailViewController.swift */; };
+		11BAA8E21AD228950053164F /* CDType - Dual 600.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11BAA8E11AD228950053164F /* CDType - Dual 600.otf */; };
+		11BAA8E41AD228C40053164F /* CDType - Dual 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */; };
+		11BAA8E61AD22E990053164F /* DashedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA8E51AD22E990053164F /* DashedSeparator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		110C61111A9A95A000548FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 110C60F31A9A95A000548FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 110C60FA1A9A95A000548FAA;
+			remoteInfo = "Wayfarer-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		110C60FB1A9A95A000548FAA /* Wayfarer-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wayfarer-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		110C60FF1A9A95A000548FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		110C61001A9A95A000548FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		110C61051A9A95A000548FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		110C61071A9A95A000548FAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		110C610A1A9A95A000548FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		110C61101A9A95A000548FAA /* Wayfarer-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wayfarer-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		110C61151A9A95A000548FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wayfarer_iosTests.swift; sourceTree = "<group>"; };
+		115D8E961AC6821500F4F2E8 /* Way.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Way.swift; sourceTree = "<group>"; };
+		115D8E991AC6842800F4F2E8 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
+		115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaysContext.swift; sourceTree = "<group>"; };
+		118641371ACF5AA00094A9D7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		118641391ACF5AB50094A9D7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1186413B1ACF5E230094A9D7 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		118641421AD0C79F0094A9D7 /* WayDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayDetailViewController.swift; sourceTree = "<group>"; };
+		11BAA8E11AD228950053164F /* CDType - Dual 600.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CDType - Dual 600.otf"; sourceTree = "<group>"; };
+		11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CDType - Dual 300.ttf"; sourceTree = "<group>"; };
+		11BAA8E51AD22E990053164F /* DashedSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedSeparator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		110C60F81A9A95A000548FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110C610D1A9A95A000548FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		110C60F21A9A95A000548FAA = {
+			isa = PBXGroup;
+			children = (
+				110C60FD1A9A95A000548FAA /* Wayfarer-ios */,
+				110C61131A9A95A000548FAA /* Wayfarer-iosTests */,
+				110C60FC1A9A95A000548FAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		110C60FC1A9A95A000548FAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				110C60FB1A9A95A000548FAA /* Wayfarer-ios.app */,
+				110C61101A9A95A000548FAA /* Wayfarer-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		110C60FD1A9A95A000548FAA /* Wayfarer-ios */ = {
+			isa = PBXGroup;
+			children = (
+				118641411AD0C7530094A9D7 /* WayDetail */,
+				118641361ACF59E70094A9D7 /* Discovery */,
+				115D8E981AC683D900F4F2E8 /* DataImport */,
+				115D8E951AC681FE00F4F2E8 /* Models */,
+				110C61001A9A95A000548FAA /* AppDelegate.swift */,
+				110C61041A9A95A000548FAA /* Main.storyboard */,
+				110C61071A9A95A000548FAA /* Images.xcassets */,
+				110C61091A9A95A000548FAA /* LaunchScreen.xib */,
+				110C60FE1A9A95A000548FAA /* Supporting Files */,
+			);
+			path = "Wayfarer-ios";
+			sourceTree = "<group>";
+		};
+		110C60FE1A9A95A000548FAA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */,
+				11BAA8E11AD228950053164F /* CDType - Dual 600.otf */,
+				110C60FF1A9A95A000548FAA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		110C61131A9A95A000548FAA /* Wayfarer-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */,
+				110C61141A9A95A000548FAA /* Supporting Files */,
+			);
+			path = "Wayfarer-iosTests";
+			sourceTree = "<group>";
+		};
+		110C61141A9A95A000548FAA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				110C61151A9A95A000548FAA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		115D8E951AC681FE00F4F2E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				115D8E961AC6821500F4F2E8 /* Way.swift */,
+				115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		115D8E981AC683D900F4F2E8 /* DataImport */ = {
+			isa = PBXGroup;
+			children = (
+				115D8E991AC6842800F4F2E8 /* DataImporter.swift */,
+			);
+			name = DataImport;
+			sourceTree = "<group>";
+		};
+		118641361ACF59E70094A9D7 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				118641371ACF5AA00094A9D7 /* CollectionViewController.swift */,
+				118641391ACF5AB50094A9D7 /* CollectionViewCell.swift */,
+				1186413B1ACF5E230094A9D7 /* CollectionView.swift */,
+			);
+			name = Discovery;
+			sourceTree = "<group>";
+		};
+		118641411AD0C7530094A9D7 /* WayDetail */ = {
+			isa = PBXGroup;
+			children = (
+				118641421AD0C79F0094A9D7 /* WayDetailViewController.swift */,
+				11BAA8E51AD22E990053164F /* DashedSeparator.swift */,
+			);
+			name = WayDetail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		110C60FA1A9A95A000548FAA /* Wayfarer-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 110C611A1A9A95A000548FAA /* Build configuration list for PBXNativeTarget "Wayfarer-ios" */;
+			buildPhases = (
+				110C60F71A9A95A000548FAA /* Sources */,
+				110C60F81A9A95A000548FAA /* Frameworks */,
+				110C60F91A9A95A000548FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wayfarer-ios";
+			productName = "Wayfarer-ios";
+			productReference = 110C60FB1A9A95A000548FAA /* Wayfarer-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		110C610F1A9A95A000548FAA /* Wayfarer-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 110C611D1A9A95A000548FAA /* Build configuration list for PBXNativeTarget "Wayfarer-iosTests" */;
+			buildPhases = (
+				110C610C1A9A95A000548FAA /* Sources */,
+				110C610D1A9A95A000548FAA /* Frameworks */,
+				110C610E1A9A95A000548FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				110C61121A9A95A000548FAA /* PBXTargetDependency */,
+			);
+			name = "Wayfarer-iosTests";
+			productName = "Wayfarer-iosTests";
+			productReference = 110C61101A9A95A000548FAA /* Wayfarer-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		110C60F31A9A95A000548FAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Ryan Pillsbury";
+				TargetAttributes = {
+					110C60FA1A9A95A000548FAA = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = BM7DCU5YJ8;
+					};
+					110C610F1A9A95A000548FAA = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 110C60FA1A9A95A000548FAA;
+					};
+				};
+			};
+			buildConfigurationList = 110C60F61A9A95A000548FAA /* Build configuration list for PBXProject "Wayfarer-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 110C60F21A9A95A000548FAA;
+			productRefGroup = 110C60FC1A9A95A000548FAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				110C60FA1A9A95A000548FAA /* Wayfarer-ios */,
+				110C610F1A9A95A000548FAA /* Wayfarer-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		110C60F91A9A95A000548FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110C61061A9A95A000548FAA /* Main.storyboard in Resources */,
+				11BAA8E41AD228C40053164F /* CDType - Dual 300.ttf in Resources */,
+				110C610B1A9A95A000548FAA /* LaunchScreen.xib in Resources */,
+				11BAA8E21AD228950053164F /* CDType - Dual 600.otf in Resources */,
+				110C61081A9A95A000548FAA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110C610E1A9A95A000548FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		110C60F71A9A95A000548FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BAA8E61AD22E990053164F /* DashedSeparator.swift in Sources */,
+				1186413C1ACF5E230094A9D7 /* CollectionView.swift in Sources */,
+				115D8E971AC6821500F4F2E8 /* Way.swift in Sources */,
+				115D8E9C1AC6848700F4F2E8 /* WaysContext.swift in Sources */,
+				118641431AD0C79F0094A9D7 /* WayDetailViewController.swift in Sources */,
+				1186413A1ACF5AB50094A9D7 /* CollectionViewCell.swift in Sources */,
+				115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */,
+				118641381ACF5AA00094A9D7 /* CollectionViewController.swift in Sources */,
+				110C61011A9A95A000548FAA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110C610C1A9A95A000548FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110C61171A9A95A000548FAA /* Wayfarer_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		110C61121A9A95A000548FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 110C60FA1A9A95A000548FAA /* Wayfarer-ios */;
+			targetProxy = 110C61111A9A95A000548FAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		110C61041A9A95A000548FAA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				110C61051A9A95A000548FAA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		110C61091A9A95A000548FAA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				110C610A1A9A95A000548FAA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		110C61181A9A95A000548FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		110C61191A9A95A000548FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		110C611B1A9A95A000548FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Wayfarer-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		110C611C1A9A95A000548FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Wayfarer-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		110C611E1A9A95A000548FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Wayfarer-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wayfarer-ios.app/Wayfarer-ios";
+			};
+			name = Debug;
+		};
+		110C611F1A9A95A000548FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Wayfarer-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wayfarer-ios.app/Wayfarer-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		110C60F61A9A95A000548FAA /* Build configuration list for PBXProject "Wayfarer-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110C61181A9A95A000548FAA /* Debug */,
+				110C61191A9A95A000548FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		110C611A1A9A95A000548FAA /* Build configuration list for PBXNativeTarget "Wayfarer-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110C611B1A9A95A000548FAA /* Debug */,
+				110C611C1A9A95A000548FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		110C611D1A9A95A000548FAA /* Build configuration list for PBXNativeTarget "Wayfarer-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110C611E1A9A95A000548FAA /* Debug */,
+				110C611F1A9A95A000548FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 110C60F31A9A95A000548FAA /* Project object */;
+}

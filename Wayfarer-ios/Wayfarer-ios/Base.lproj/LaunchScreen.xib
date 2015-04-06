@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingscreenblank" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-aE-7nG">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spirograph" translatesAutoresizingMaskIntoConstraints="NO" id="ANu-rB-1hE">
+                    <rect key="frame" x="8" y="100" width="464" height="295"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="295" id="un5-hs-a2N"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8b7-aE-7nG" secondAttribute="bottom" id="0cf-gx-CMt"/>
+                <constraint firstItem="ANu-rB-1hE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="JZi-4T-1Wh"/>
+                <constraint firstAttribute="centerX" secondItem="ANu-rB-1hE" secondAttribute="centerX" id="Qwu-gq-BoT"/>
+                <constraint firstAttribute="trailing" secondItem="ANu-rB-1hE" secondAttribute="trailing" constant="8" id="Zhx-co-k54"/>
+                <constraint firstItem="8b7-aE-7nG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iOM-zo-m0H"/>
+                <constraint firstAttribute="trailing" secondItem="8b7-aE-7nG" secondAttribute="trailing" id="lvH-DA-OCM"/>
+                <constraint firstItem="8b7-aE-7nG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uBA-XR-M4K"/>
+                <constraint firstItem="ANu-rB-1hE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="xLI-QS-XKR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loadingscreenblank" width="640" height="1136"/>
+        <image name="spirograph" width="969" height="967"/>
+    </resources>
+</document>
