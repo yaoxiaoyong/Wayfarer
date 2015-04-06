@@ -1,22 +1,22 @@
-package utility;
+package models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Pillsbury on 3/26/15.
- */
-public class Way {
+public class Way  {
 
     public int id;
+
     public String title = "";
-    public String subTitle = "";
+
+    public String subTitle;
     public List<String> descriptions = new ArrayList<>();
     public List<String> tasks = new ArrayList<>();
     public List<String> tips = new ArrayList<>();
     public List<String> items  = new ArrayList<>();
     public List<String> transportation  = new ArrayList<>();
-    public String coverImage = "";
+
+    public String coverImage;
 
     public int getId() {
         return id;

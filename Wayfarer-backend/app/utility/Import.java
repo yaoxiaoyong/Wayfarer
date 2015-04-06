@@ -1,5 +1,7 @@
 package utility;
 
+import models.Way;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;

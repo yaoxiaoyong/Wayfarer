@@ -10,5 +10,8 @@ libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
   cache,
-  javaWs
+  javaWs,
+  "org.postgresql" % "postgresql" % "9.3-1102-jdbc4"
 )
+
+libraryDependencies += "xalan" % "serializer" % "2.7.2"
