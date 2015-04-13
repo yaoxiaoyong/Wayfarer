@@ -38,7 +38,7 @@ class WayDetailViewController: UIViewController {
         self.tipsLabel.text = (self.way!.tips.count > 0) ? self.way!.tips[0] : "";
         self.letsGoButton.layer.borderWidth = 2;
         self.letsGoButton.layer.borderColor = UIColor.whiteColor().CGColor;
-//        self.savedImageView.image = self.way!.subTitle;
+        self.savedImageView.image = self.way!.isSaved ? UIImage(named: "heart_selected") : UIImage(named: "heart");
     }
 
     override func didReceiveMemoryWarning() {

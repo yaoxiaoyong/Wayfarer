@@ -13,7 +13,7 @@ import Foundation
 class DataImporter {
     
     func importData() -> WaysContext {
-        var dataURL =  NSURL(string: "http://localhost:9000/data");
+        var dataURL =  NSURL(string: Globals.apiRoot + "user/1/ways"); // 1 is me: Ryan Pillsbury
         let jsonData = NSData(contentsOfURL: dataURL!);
         var dataString = NSString(data: jsonData!, encoding: NSUTF8StringEncoding) as String;
         let utfJsonData = dataString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false);

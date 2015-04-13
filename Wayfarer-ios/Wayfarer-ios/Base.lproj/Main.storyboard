@@ -91,7 +91,6 @@
         <!--Way Detail View Controller-->
         <scene sceneID="Lcu-cW-FaI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6sK-Ie-mqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="WayDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3wv-Qt-H3p" customClass="WayDetailViewController" customModule="Wayfarer_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ApR-vo-ymO"/>
@@ -190,7 +189,7 @@
                                                 <color key="textColor" red="0.2156862745" green="0.81960784310000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-aC-t8W" userLabel="DescriptionText">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-aC-t8W" userLabel="DescriptionText">
                                                 <rect key="frame" x="0.0" y="175" width="560" height="17"/>
                                                 <fontDescription key="fontDescription" name="Dual-300" family="Dual" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -353,6 +352,7 @@
                         <outlet property="titleLabel" destination="a4Q-UQ-hGh" id="scP-Ra-Sht"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sK-Ie-mqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5903" y="-132"/>
         </scene>

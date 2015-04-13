@@ -20,10 +20,11 @@ class Way: NSObject {
     var transportation: Array<String> = [];
     var coverImage: String = "";
     var image: UIImage!
+    var isSaved: Bool = false;
     
     func fetchImage(callback: (id: Int) -> Void) -> Void {
         if (self.image == nil) {
-            let urlString = "http://localhost:9000/" + self.coverImage;
+            let urlString = Globals.apiRoot + self.coverImage;
             let url = NSURL(string: urlString);
             let qos = Int(QOS_CLASS_USER_INITIATED.value);
             dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
