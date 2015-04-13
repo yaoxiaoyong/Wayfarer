@@ -1,42 +1,109 @@
 package models;
 
-import play.db.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import play.data.validation.Constraints;
+import play.db.jpa.JPA;
 
-import static play.data.validation.Constraints.Email;
-import static play.data.validation.Constraints.Required;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class WayUser extends Model {
+@Table(name = "way_user")
+public class WayUser {
 
-    @Required
-    @Email
+    @Constraints.Email
+    @Column(unique = true)
     public String email;
 
-    @Required
-    public String fullname;
+    public String firstName;
 
-    public boolean isAdmin;
+    public String lastName;
 
     @Id
-    private Long id;
+    @GeneratedValue
+    public int id;
 
-    public WayUser(String email, String fullname, boolean isAdmin, Long id) {
-        this.email = email;
-        this.fullname = fullname;
-        this.isAdmin = isAdmin;
-        this.id = id;
-    }
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "saved_ways", joinColumns = @JoinColumn(name = "way_user_id"), inverseJoinColumns = @JoinColumn(name = "way_id"))
+    public List<WayImpl> savedWays;
 
-    public static Finder<Long, WayUser> find = new Finder<>(Long.class, WayUser.class);
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<WayImpl> getSavedWays() {
+        return savedWays;
+    }
+
+    public void setSavedWays(List<WayImpl> savedWays) {
+        this.savedWays = savedWays;
+    }
+
+    public static WayUser save(WayUser user) {
+        JPA.em().persist(user);
+        return user;
+    }
+
+    public static WayUser findById(int id) {
+        return JPA.em().find(WayUser.class, id);
+    }
+
+    public static WayUser findByEmail(String email) {
+        Session session = (Session) JPA.em().getDelegate();
+        Criteria criteria = session.createCriteria(WayUser.class);
+        List list = criteria.add(Restrictions.eq("email", email)).list();
+        if (list.size() > 1) {
+            throw new RuntimeException("More than one entity was mapped to the same email address");
+        }
+        return (list.size() == 1) ? (WayUser) list.get(0) : null;
+    }
+
+    public static WayUser createWayUser() {
+        WayUser u = new WayUser();
+        JPA.em().persist(u);
+        return u;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch (Exception e) {
+            return super.toString();
+        }
     }
 }

@@ -1,29 +1,28 @@
-package utility;
+package startup;
 
-import models.Way;
+import models.WayImpl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Pillsbury on 3/26/15.
- */
+import static models.Utils.Transportation;
+
 public class Import {
 
     private static final String DEFAULT_DATABASE_CSV = "./resources/ways.csv";
 
     public static void main(String[] args) throws Exception {
-        new Import().doImport(DEFAULT_DATABASE_CSV);
+        Import.doImport(DEFAULT_DATABASE_CSV);
     }
 
-    public List<Way> doImport() throws Exception{
+    public static List<WayImpl> doImport() throws Exception{
         return doImport(DEFAULT_DATABASE_CSV);
     }
 
-    public List<Way> doImport(String filename) throws Exception {
-        List<Way> db = new ArrayList<>();
+    public static List<WayImpl> doImport(String filename) throws Exception {
+        List<WayImpl> db = new ArrayList<>();
         char doubleLeftQuote = '\u201C';
         char doubleRightQuote = '\u201D';
 
@@ -41,7 +40,7 @@ public class Import {
                 line = line.replace("\"", "");
                 line = line.replace(doubleLeftQuote, '"');
                 line = line.replace(doubleRightQuote, '"');
-                Way way = new Way();
+                WayImpl way = new WayImpl();
                 for (columnNumber = 0; columnNumber < 9; columnNumber++) {
                     if ( columnNumber <= 2 || columnNumber == 8) {
                         int indexOfNextComma = (columnNumber == 0) ? line.indexOf(",") :
@@ -53,16 +52,16 @@ public class Import {
 
                         switch (columnNumber) {
                             case 0:
-                                way.id = Integer.parseInt(cellValue);
+                                way.setId(Integer.parseInt(cellValue));
                                 break;
                             case 1:
-                                way.title = cellValue.substring(1, cellValue.length() - 1);
+                                way.setTitle(cellValue.substring(1, cellValue.length() - 1));
                                 break;
                             case 2:
-                                way.subTitle = cellValue.substring(1, cellValue.length() - 1);
+                                way.setSubTitle(cellValue.substring(1, cellValue.length() - 1));
                                 break;
                             case 8:
-                                way.coverImage = "assets/images/cover_images/" + cellValue.substring(1, cellValue.length() - 1);
+                                way.setCoverImage("assets/images/cover_images/" + cellValue.substring(1, cellValue.length() - 1));
                                 break;
                         }
                     } else {
@@ -95,19 +94,27 @@ public class Import {
                                     if (stringList.size() > 0) {
                                         switch (columnNumber) {
                                             case 3:
-                                                way.descriptions = stringList;
+                                                way.setDescriptions(stringList);
                                                 break;
                                             case 4:
-                                                way.tasks = stringList;
+                                                way.setTasks(stringList);
                                                 break;
                                             case 5:
-                                                way.tips = stringList;
+                                                way.setTips(stringList);
                                                 break;
                                             case 6:
-                                                way.items = stringList;
+                                                way.setItems(stringList);
                                                 break;
                                             case 7:
-                                                way.transportation = stringList;
+                                                List<Transportation> transportations = new ArrayList<>();
+                                                for (String s : stringList) {
+                                                    Transportation t = Transportation.getTransportation(s);
+                                                    if (t == null) {
+                                                        throw new Exception("Error creating Transporation enum for string" + s);
+                                                    }
+                                                    transportations.add(Transportation.getTransportation(s));
+                                                }
+                                                way.setTransportation(transportations);
                                                 break;
                                         }
                                     }
