@@ -12,10 +12,19 @@ class WayInProgressViewController: UIViewController {
     
     var way: Way?
 
+    @IBOutlet weak var callToActionView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = way?.title
+        self.way?.fetchImage(is2x: true, isAsync: true, callback: self.setImage)
+    }
+    
+    private func setImage(id: Int) -> Void {
+        if (self.way?.id == id) {
+            self.imageView.image = self.way?.image2x;
+        }
     }
 
     override func didReceiveMemoryWarning() {
