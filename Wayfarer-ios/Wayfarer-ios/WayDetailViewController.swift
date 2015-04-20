@@ -39,6 +39,7 @@ class WayDetailViewController: UIViewController {
         self.letsGoButton.layer.borderWidth = 2;
         self.letsGoButton.layer.borderColor = UIColor.whiteColor().CGColor;
         self.savedImageView.image = self.way!.isSaved ? UIImage(named: "heart_selected") : UIImage(named: "heart");
+        self.way?.fetchImage(is2x: true, isAsync: true, callback: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,13 @@ class WayDetailViewController: UIViewController {
     }
     
     @IBAction func onLetsGoPressed() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("WayInProgressViewController") as WayInProgressViewController;
+        let presentingNavController = self.presentingViewController? as UINavigationController;
+        vc.way = way;
+        self.presentingViewController?.dismissViewControllerAnimated(false, completion: {() -> Void in
+            presentingNavController.pushViewController(vc, animated: true);
+        });
     }
     
     @IBAction func onClosePressed() {

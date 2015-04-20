@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func prefetchThumbnails() {
         for way in self.Context!.Ways {
-            way.fetchImage(is2x: false, isAsync: false, callback: { (id: Int) -> Void in });
+            way.fetchImage(is2x: false, isAsync: false, callback: nil);
         }
     }
     

@@ -106,7 +106,7 @@ class CollectionViewController: UICollectionViewController {
         if (row % 6 == 5) {
             for index in 1..<7 {
                 if let way = getWayByRow(row + index) {
-                    way.fetchImage(is2x: false, isAsync: true, callback: {(id: Int) -> Void in print("GOT HERE!!! \(row + index)")});
+                    way.fetchImage(is2x: false, isAsync: true, callback: nil);
                 }
             }
         }
@@ -124,11 +124,7 @@ class CollectionViewController: UICollectionViewController {
             width: collectionView.frame.width / 2 - 2,
             height: floor((collectionView.frame.height - navBarHeight) / 3 - 0.5)
         );
-        println("collection view height: \(collectionView.frame.size.height)");
-        println("collection view bounds: \(collectionView.bounds.height)");
-        println("main screen app size: \(UIScreen.mainScreen().applicationFrame.size)")
-        println("status bar height: \(navBarHeight)")
-        println("calculated size: \(size)");
+            
         return size;
     }
     

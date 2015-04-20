@@ -12,6 +12,7 @@
 		110C61081A9A95A000548FAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110C61071A9A95A000548FAA /* Images.xcassets */; };
 		110C610B1A9A95A000548FAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110C61091A9A95A000548FAA /* LaunchScreen.xib */; };
 		110C61171A9A95A000548FAA /* Wayfarer_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */; };
+		11169D8C1AE4903D004C68FA /* WayInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11169D8B1AE4903D004C68FA /* WayInProgressViewController.swift */; };
 		111F58B71ADB5F5A004A3E49 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F58B61ADB5F5A004A3E49 /* Globals.swift */; };
 		115D8E971AC6821500F4F2E8 /* Way.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E961AC6821500F4F2E8 /* Way.swift */; };
 		115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E991AC6842800F4F2E8 /* DataImporter.swift */; };
@@ -45,6 +46,7 @@
 		110C61101A9A95A000548FAA /* Wayfarer-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wayfarer-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		110C61151A9A95A000548FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wayfarer_iosTests.swift; sourceTree = "<group>"; };
+		11169D8B1AE4903D004C68FA /* WayInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayInProgressViewController.swift; sourceTree = "<group>"; };
 		111F58B61ADB5F5A004A3E49 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		115D8E961AC6821500F4F2E8 /* Way.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Way.swift; sourceTree = "<group>"; };
 		115D8E991AC6842800F4F2E8 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		110C60FD1A9A95A000548FAA /* Wayfarer-ios */ = {
 			isa = PBXGroup;
 			children = (
+				11169D8A1AE48FF5004C68FA /* WayInProgress */,
 				118641411AD0C7530094A9D7 /* WayDetail */,
 				118641361ACF59E70094A9D7 /* Discovery */,
 				115D8E981AC683D900F4F2E8 /* DataImport */,
@@ -136,6 +139,14 @@
 				110C61151A9A95A000548FAA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11169D8A1AE48FF5004C68FA /* WayInProgress */ = {
+			isa = PBXGroup;
+			children = (
+				11169D8B1AE4903D004C68FA /* WayInProgressViewController.swift */,
+			);
+			name = WayInProgress;
 			sourceTree = "<group>";
 		};
 		115D8E951AC681FE00F4F2E8 /* Models */ = {
@@ -280,6 +291,7 @@
 				11BAA8E61AD22E990053164F /* DashedSeparator.swift in Sources */,
 				1186413C1ACF5E230094A9D7 /* CollectionView.swift in Sources */,
 				115D8E971AC6821500F4F2E8 /* Way.swift in Sources */,
+				11169D8C1AE4903D004C68FA /* WayInProgressViewController.swift in Sources */,
 				115D8E9C1AC6848700F4F2E8 /* WaysContext.swift in Sources */,
 				118641431AD0C79F0094A9D7 /* WayDetailViewController.swift in Sources */,
 				1186413A1ACF5AB50094A9D7 /* CollectionViewCell.swift in Sources */,

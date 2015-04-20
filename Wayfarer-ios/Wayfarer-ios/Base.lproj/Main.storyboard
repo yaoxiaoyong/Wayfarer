@@ -354,7 +354,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sK-Ie-mqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5903" y="-132"/>
+            <point key="canvasLocation" x="5649" y="-335"/>
+        </scene>
+        <!--Way In Progress View Controller-->
+        <scene sceneID="AS8-LT-Gqb">
+            <objects>
+                <viewController storyboardIdentifier="WayInProgressViewController" id="xRg-E3-Wak" customClass="WayInProgressViewController" customModule="Wayfarer_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BFZ-2t-Trd"/>
+                        <viewControllerLayoutGuide type="bottom" id="CVh-5b-kqg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2RT-3j-WAy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acW-tK-UVa" userLabel="CallToActionView">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01_24hours" translatesAutoresizingMaskIntoConstraints="NO" id="tOg-kb-pUm">
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" secondItem="acW-tK-UVa" secondAttribute="height" multiplier="2" id="0oM-q8-Unb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tOg-kb-pUm" secondAttribute="trailing" constant="-16" id="8FE-hd-EI0"/>
+                            <constraint firstItem="tOg-kb-pUm" firstAttribute="top" secondItem="BFZ-2t-Trd" secondAttribute="bottom" id="Fs8-6o-Ul9"/>
+                            <constraint firstItem="CVh-5b-kqg" firstAttribute="top" secondItem="acW-tK-UVa" secondAttribute="bottom" id="TMC-PF-5VS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="acW-tK-UVa" secondAttribute="trailing" constant="-16" id="aOY-hR-5JT"/>
+                            <constraint firstItem="tOg-kb-pUm" firstAttribute="width" secondItem="2RT-3j-WAy" secondAttribute="width" id="bRy-vZ-XXy"/>
+                            <constraint firstAttribute="width" secondItem="acW-tK-UVa" secondAttribute="width" id="hMy-7C-S7f"/>
+                            <constraint firstItem="tOg-kb-pUm" firstAttribute="height" secondItem="2RT-3j-WAy" secondAttribute="height" multiplier="0.5" id="r69-zg-M4O"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfE-eQ-sQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6271" y="-385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dl3-dp-MBO">
@@ -376,6 +413,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="01_24hours" width="320" height="320"/>
         <image name="close" width="35" height="35"/>
         <image name="heart" width="69" height="57"/>
     </resources>

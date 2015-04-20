@@ -15,8 +15,8 @@ struct Globals {
         case prod
     };
     
-    static let useCDN = true;
-    static let environment = ENVIRONMENT.prod;
+    static let useCDN = false;
+    static let environment = ENVIRONMENT.local;
     static let prefetchThumbnailsOnAppLoad = false;
     static let prefetchNextPage = true;
     

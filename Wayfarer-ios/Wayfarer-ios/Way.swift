@@ -28,8 +28,8 @@ class Way: NSObject {
     
     private var isFetching = false;
     private var isFetching2x = false;
-    private var callbackQueue: Array<(id: Int) -> Void> = [];
-    private var callbackQueue2x: Array<(id: Int) -> Void> = [];
+    private var callbackQueue: Array<((id: Int) -> Void)?> = [];
+    private var callbackQueue2x: Array<((id: Int) -> Void)?> = [];
     
     var coverImage2x: String {
         get {
@@ -45,7 +45,7 @@ class Way: NSObject {
         }
     };
     
-    func fetchImage(is2x: Bool = false, isAsync: Bool = true, callback: (id: Int) -> Void) -> Void {
+    func fetchImage(is2x: Bool = false, isAsync: Bool = true, callback: ((id: Int) -> Void)?) -> Void {
         if (isAsync) {
             if (is2x) {
                 callbackQueue2x.append(callback);
@@ -60,11 +60,10 @@ class Way: NSObject {
                 if (isAsync) {
                     let qos = Int(QOS_CLASS_USER_INITIATED.value);
                     dispatch_async(dispatch_get_global_queue(qos, 0)) {
-                        self.imageGetterWorkerFunction(url, is2x: is2x, isAsync: true, callback: callback);
-                        self.callCallbacks(is2x, id: self.id);
+                        self.imageGetterWorkerFunction(url, is2x: is2x, isAsync: true);
                     }
                 } else {
-                    self.imageGetterWorkerFunction(url, is2x: is2x, isAsync: false, callback: callback);
+                    self.imageGetterWorkerFunction(url, is2x: is2x, isAsync: false);
                 }
             }
         } else {
@@ -77,23 +76,27 @@ class Way: NSObject {
     private func callCallbacks(is2x: Bool, id: Int) {
         if (is2x) {
             for cb in callbackQueue2x {
-                cb(id: id);
+                if (cb != nil) {
+                    cb?(id: id);
+                }
             }
             callbackQueue2x = [];
         } else {
             for cb in callbackQueue {
-                cb(id: id);
+                if (cb != nil) {
+                    cb?(id: id);
+                }
             }
             callbackQueue = [];
         }
     }
     
-    private func imageGetterWorkerFunction (url: NSURL?, is2x: Bool, isAsync: Bool, callback: (id: Int) -> Void) -> Void {
+    private func imageGetterWorkerFunction (url: NSURL?, is2x: Bool, isAsync: Bool) -> Void {
         let imageData = NSData(contentsOfURL: url!);
         if (isAsync) {
             dispatch_async(dispatch_get_main_queue()) {
                 self.imageGetterInnerWorkerFunction(imageData, is2x: is2x);
-                callback(id: self.id);
+                self.callCallbacks(is2x, id: self.id);
             }
         } else {
             self.imageGetterInnerWorkerFunction(imageData, is2x: is2x);
