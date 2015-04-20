@@ -82,25 +82,43 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CollectionViewCell
-        var wayModel = getWayByIndexPath(indexPath);
+        var wayModel = getWayByRow(indexPath.row);
         cell.backgroundImageView = nil;
         cell.backgroundView = nil;
         cell.setWay(wayModel);
         if (wayModel != nil) {
-            wayModel!.fetchImage(cell.setImage);
+            wayModel!.fetchImage(is2x: false, isAsync: true, callback: cell.setImage)
         }
+        if (Globals.prefetchNextPage) {
+            prefetchNextPageImages(indexPath.row);
+        }
+        
         return cell
     }
     
+    /*
+     Assumptions:
+        We really only interested in fetch the next page with page being defined in interval of six.
+        So to optimize, we are only going to fetch on the first index of the current page for the next page, so 1, 7, 13
+    */
+    
+    private func prefetchNextPageImages(row: Int) {
+        if (row % 6 == 5) {
+            for index in 1..<7 {
+                if let way = getWayByRow(row + index) {
+                    way.fetchImage(is2x: false, isAsync: true, callback: {(id: Int) -> Void in print("GOT HERE!!! \(row + index)")});
+                }
+            }
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         var navBarHeight: CGFloat = 0;
         if (self.navigationController != nil) {
             navBarHeight = self.navigationController!.navigationBar.frame.height;
             navBarHeight += UIApplication.sharedApplication().statusBarFrame.size.height;
         }
-        
-        
         
         var size = CGSize(
             width: collectionView.frame.width / 2 - 2,
@@ -114,27 +132,26 @@ class CollectionViewController: UICollectionViewController {
         return size;
     }
     
-    private func getWayByIndexPath(indexPath: NSIndexPath) -> Way? {
-        var tmpRow = indexPath.row;
+    private func getWayByRow(row: Int) -> Way? {
         var calculatedId = 0;
-        switch (indexPath.row % 6) {
+        switch (row % 6) {
         case 0:
-            calculatedId = tmpRow + 1;
+            calculatedId = row + 1;
             break;
         case 1:
-            calculatedId = tmpRow + 2;
+            calculatedId = row + 2;
             break;
         case 2:
-            calculatedId = tmpRow + 3;
+            calculatedId = row + 3;
             break;
         case 3:
-            calculatedId = tmpRow - 1;
+            calculatedId = row - 1;
             break;
         case 4:
-            calculatedId = tmpRow;
+            calculatedId = row;
             break;
         case 5:
-            calculatedId = tmpRow + 1;
+            calculatedId = row + 1;
             break;
         default:
             break;
@@ -151,7 +168,7 @@ class CollectionViewController: UICollectionViewController {
         if (indexPath.row <= self.context!.getCount()) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewControllerWithIdentifier("WayDetailViewController") as WayDetailViewController;
-            vc.way = getWayByIndexPath(indexPath);
+            vc.way = getWayByRow(indexPath.row);
             vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
             self.providesPresentationContextTransitionStyle = true;
             self.presentViewController(vc, animated: true, completion: nil);

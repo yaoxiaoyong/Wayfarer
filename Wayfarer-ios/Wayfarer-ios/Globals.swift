@@ -9,5 +9,17 @@
 import Foundation
 
 struct Globals {
-    static let apiRoot: String = "https://wayfarer-backend.herokuapp.com/"; // or http://localhost:9000/;
+    
+    enum ENVIRONMENT {
+        case local
+        case prod
+    };
+    
+    static let useCDN = true;
+    static let environment = ENVIRONMENT.prod;
+    static let prefetchThumbnailsOnAppLoad = false;
+    static let prefetchNextPage = true;
+    
+    static let apiRoot: String = (environment == ENVIRONMENT.prod) ? "https://wayfarer-backend.herokuapp.com/" : "http://localhost:9000/";
+    static let staticResourcesRoot: String = (environment == ENVIRONMENT.prod && useCDN) ? "https://d314oora7wgipi.cloudfront.net/" : apiRoot;
 }
