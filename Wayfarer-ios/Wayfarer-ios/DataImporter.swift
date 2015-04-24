@@ -12,22 +12,28 @@ import Foundation
 
 class DataImporter {
     
-    func importData() -> WaysContext {
+    func importData() -> WaysContext? {
         var dataURL =  NSURL(string: Globals.apiRoot + "user/1/ways"); // 1 is me: Ryan Pillsbury
         let jsonData = NSData(contentsOfURL: dataURL!);
-        var dataString = NSString(data: jsonData!, encoding: NSUTF8StringEncoding) as String;
+        var dataString = NSString(data: jsonData!, encoding: NSUTF8StringEncoding) as! String;
         let utfJsonData = dataString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false);
         
         var error : NSError?
         
-        let JSONArray: Array = NSJSONSerialization.JSONObjectWithData(utfJsonData!, options: nil, error: &error) as NSArray;
-        var ways: Array<Way> = [];
-        for w in JSONArray{
-            var tmpWay = Way();
-            tmpWay.setValuesForKeysWithDictionary(w as Dictionary);
-            ways.append(tmpWay);
+        let parseResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(utfJsonData!, options: nil, error: &error);
+        if ((parseResult) != nil) {
+            let JSONArray =  parseResult! as! NSArray
+            var ways: Array<Way> = [];
+            
+            for w in JSONArray  {
+                var tmpWay = Way();
+                tmpWay.setValuesForKeysWithDictionary(w as! [NSObject : AnyObject])
+                ways.append(tmpWay);
+            }
+            var c: WaysContext = WaysContext(ways: ways);
+            return c;
+        } else {
+            return nil;
         }
-        var c: WaysContext = WaysContext(ways: ways);
-        return c;
     }
 }

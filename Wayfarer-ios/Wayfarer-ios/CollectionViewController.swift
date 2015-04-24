@@ -12,7 +12,7 @@ let reuseIdentifier = "ExperimentCell"
 
 class CollectionViewController: UICollectionViewController {
     
-    let delegate = UIApplication.sharedApplication().delegate as AppDelegate;
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate;
     var context: WaysContext?
 
     override func viewDidLoad() {
@@ -81,11 +81,11 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
         var wayModel = getWayByRow(indexPath.row);
         cell.backgroundImageView = nil;
         cell.backgroundView = nil;
-        cell.setWay(wayModel);
+        cell.setWayModel(wayModel);
         if (wayModel != nil) {
             wayModel!.fetchImage(is2x: false, isAsync: true, callback: cell.setImage)
         }
@@ -163,7 +163,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row <= self.context!.getCount()) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("WayDetailViewController") as WayDetailViewController;
+            let vc = storyboard.instantiateViewControllerWithIdentifier("WayDetailViewController") as! WayDetailViewController;
             vc.way = getWayByRow(indexPath.row);
             vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
             self.providesPresentationContextTransitionStyle = true;

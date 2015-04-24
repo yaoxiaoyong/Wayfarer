@@ -49,8 +49,8 @@ class WayDetailViewController: UIViewController {
     
     @IBAction func onLetsGoPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("WayInProgressViewController") as WayInProgressViewController;
-        let presentingNavController = self.presentingViewController? as UINavigationController;
+        let vc = storyboard.instantiateViewControllerWithIdentifier("WayInProgressViewController") as! WayInProgressViewController;
+        let presentingNavController = self.presentingViewController as! UINavigationController;
         vc.way = way;
         self.presentingViewController?.dismissViewControllerAnimated(false, completion: {() -> Void in
             presentingNavController.pushViewController(vc, animated: true);

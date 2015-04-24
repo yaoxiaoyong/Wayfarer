@@ -32,7 +32,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     
-    func setWay(way: Way?) {
+    func setWayModel(way: Way?) {
         self.way = way;
         if (way != nil) {
             self.title.text = self.way!.title.uppercaseString;
