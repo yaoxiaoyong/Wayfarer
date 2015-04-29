@@ -12,11 +12,10 @@ let reuseIdentifier = "ExperimentCell"
 
 class CollectionViewController: UICollectionViewController {
     
-    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate;
     var context: WaysContext?
 
     override func viewDidLoad() {
-        self.context = delegate.Context;
+        self.context = AppDelegate.Context;
         super.viewDidLoad()
 
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

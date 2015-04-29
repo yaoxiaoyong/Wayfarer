@@ -67,6 +67,27 @@ public class UserController extends Controller {
     }
 
     @Transactional
+    public static Result unsaveUserWay(int userId, int wayId) {
+        WayUser user = WayUser.findById(userId);
+        WayImpl wayToUnSave = WayImpl.getWayById(wayId);
+
+        if (user != null && wayToUnSave != null) {
+            List<WayImpl> ways = user.getSavedWays();
+            for (int i = 0; i < ways.size(); i++) {
+                WayImpl w = ways.get(i);
+                if (w.getId() == wayId) {
+                    ways.remove(i);
+                    WayUser.save(user);
+                    return ok(user.toString()); // has already saved this way
+                }
+            }
+
+            return ok(user.toString()); // was never saved
+        }
+        return ok((user != null) ? user.toString() : "");
+    }
+
+    @Transactional
     public static Result updateUser(int userId) {
         WayUser user = WayUser.findById(userId);
         if ( user == null) {

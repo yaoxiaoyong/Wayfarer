@@ -24,6 +24,9 @@
 		11BAA8E21AD228950053164F /* CDType - Dual 600.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11BAA8E11AD228950053164F /* CDType - Dual 600.otf */; };
 		11BAA8E41AD228C40053164F /* CDType - Dual 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */; };
 		11BAA8E61AD22E990053164F /* DashedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA8E51AD22E990053164F /* DashedSeparator.swift */; };
+		11D9933C1AEEE6F800C207EC /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9933B1AEEE6F800C207EC /* HttpUtil.swift */; };
+		11D9933E1AEF0C7C00C207EC /* WayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9933D1AEF0C7C00C207EC /* WayAPI.swift */; };
+		11D993401AEF2CA700C207EC /* WayUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9933F1AEF2CA700C207EC /* WayUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		11BAA8E11AD228950053164F /* CDType - Dual 600.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CDType - Dual 600.otf"; sourceTree = "<group>"; };
 		11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CDType - Dual 300.ttf"; sourceTree = "<group>"; };
 		11BAA8E51AD22E990053164F /* DashedSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedSeparator.swift; sourceTree = "<group>"; };
+		11D9933B1AEEE6F800C207EC /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
+		11D9933D1AEF0C7C00C207EC /* WayAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayAPI.swift; sourceTree = "<group>"; };
+		11D9933F1AEF2CA700C207EC /* WayUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		110C60FD1A9A95A000548FAA /* Wayfarer-ios */ = {
 			isa = PBXGroup;
 			children = (
+				11D9933A1AEEE6DD00C207EC /* Utils */,
 				11169D8A1AE48FF5004C68FA /* WayInProgress */,
 				118641411AD0C7530094A9D7 /* WayDetail */,
 				118641361ACF59E70094A9D7 /* Discovery */,
@@ -154,6 +161,7 @@
 			children = (
 				115D8E961AC6821500F4F2E8 /* Way.swift */,
 				115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */,
+				11D9933F1AEF2CA700C207EC /* WayUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -183,6 +191,15 @@
 				11BAA8E51AD22E990053164F /* DashedSeparator.swift */,
 			);
 			name = WayDetail;
+			sourceTree = "<group>";
+		};
+		11D9933A1AEEE6DD00C207EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				11D9933B1AEEE6F800C207EC /* HttpUtil.swift */,
+				11D9933D1AEF0C7C00C207EC /* WayAPI.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +313,12 @@
 				118641431AD0C79F0094A9D7 /* WayDetailViewController.swift in Sources */,
 				1186413A1ACF5AB50094A9D7 /* CollectionViewCell.swift in Sources */,
 				115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */,
+				11D993401AEF2CA700C207EC /* WayUser.swift in Sources */,
 				118641381ACF5AA00094A9D7 /* CollectionViewController.swift in Sources */,
 				111F58B71ADB5F5A004A3E49 /* Globals.swift in Sources */,
+				11D9933E1AEF0C7C00C207EC /* WayAPI.swift in Sources */,
 				110C61011A9A95A000548FAA /* AppDelegate.swift in Sources */,
+				11D9933C1AEEE6F800C207EC /* HttpUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

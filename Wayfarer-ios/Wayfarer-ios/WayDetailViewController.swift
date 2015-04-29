@@ -18,7 +18,7 @@ class WayDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
     @IBOutlet weak var tipsLabel: UILabel!
-    @IBOutlet weak var savedImageView: UIImageView!
+    @IBOutlet weak var savedImageButton: UIButton!
     @IBOutlet weak var callToActionView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -38,7 +38,9 @@ class WayDetailViewController: UIViewController {
         self.tipsLabel.text = (self.way!.tips.count > 0) ? self.way!.tips[0] : "";
         self.letsGoButton.layer.borderWidth = 2;
         self.letsGoButton.layer.borderColor = UIColor.whiteColor().CGColor;
-        self.savedImageView.image = self.way!.isSaved ? UIImage(named: "heart_selected") : UIImage(named: "heart");
+        self.savedImageButton.setImage(
+            self.way!.isSaved ? UIImage(named: "heart_selected") : UIImage(named: "heart"),
+            forState: UIControlState.Normal)
         self.way?.fetchImage(is2x: true, isAsync: true, callback: nil)
     }
 
@@ -59,6 +61,17 @@ class WayDetailViewController: UIViewController {
     
     @IBAction func onClosePressed() {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
+    @IBAction func onSavedImageButtonPressed() {
+        self.way!.isSaved = !(self.way!.isSaved)
+        self.savedImageButton.setImage(
+            self.way!.isSaved ? UIImage(named: "heart_selected") : UIImage(named: "heart"),
+            forState: UIControlState.Normal)
+        let qos = Int(QOS_CLASS_USER_INITIATED.value);
+        dispatch_async(dispatch_get_global_queue(qos, 0)) {
+            WayAPI.saveWayForUser(AppDelegate.userId, wayId: self.way!.id, isSaved: self.way!.isSaved)
+        }
     }
     
 }

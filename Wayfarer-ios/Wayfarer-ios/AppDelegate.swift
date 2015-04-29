@@ -12,10 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var Context: WaysContext?
+    static var Context: WaysContext!
+    static var userId: Int!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        self.Context = DataImporter().importData();
+        var UUID = getOrCreateUUID();
+        AppDelegate.userId = UUID.0;
+        AppDelegate.Context = DataImporter().importData(AppDelegate.userId);
         if (Globals.prefetchThumbnailsOnAppLoad) {
             self.prefetchThumbnails();
         }
@@ -23,8 +26,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // Returns a uuid. Also returns true user already existed, and false otherwise
+    private func getOrCreateUUID() -> (Int, Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        var UUIDObject: AnyObject? = userDefaults.objectForKey("ApplicationUniqueIdentifier");
+        if UUIDObject == nil {
+            var user = WayAPI.createNewUser()
+            var UUID = user!.id!
+            userDefaults.setObject(UUID, forKey: "ApplicationUniqueIdentifier")
+            userDefaults.synchronize()
+            return (UUID, false);
+        } else {
+            return ((UUIDObject as! Int), true);
+        }
+    
+    }
+    
     private func prefetchThumbnails() {
-        for way in self.Context!.Ways {
+        for way in AppDelegate.Context!.Ways {
             way.fetchImage(is2x: false, isAsync: false, callback: nil);
         }
     }

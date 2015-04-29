@@ -12,8 +12,8 @@ import Foundation
 
 class DataImporter {
     
-    func importData() -> WaysContext? {
-        var dataURL =  NSURL(string: Globals.apiRoot + "user/1/ways"); // 1 is me: Ryan Pillsbury
+    func importData(userUUID: Int) -> WaysContext? {
+        var dataURL =  NSURL(string: Globals.apiRoot + "user/\(userUUID)/ways");
         let jsonData = NSData(contentsOfURL: dataURL!);
         var dataString = NSString(data: jsonData!, encoding: NSUTF8StringEncoding) as! String;
         let utfJsonData = dataString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false);

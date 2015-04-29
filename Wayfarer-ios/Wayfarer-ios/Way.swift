@@ -22,8 +22,6 @@ class Way: NSObject {
     var image: UIImage!
     var image2x: UIImage!
     var isSaved: Bool = false;
-    var isSaved2x: Bool = false;
-    
     // We use a prefetch method and we do not want to g
     
     private var isFetching = false;
@@ -44,6 +42,7 @@ class Way: NSObject {
             }
         }
     };
+    
     
     func fetchImage(is2x: Bool = false, isAsync: Bool = true, callback: ((id: Int) -> Void)?) -> Void {
         if (isAsync) {
