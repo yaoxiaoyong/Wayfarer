@@ -15,10 +15,10 @@ struct Globals {
         case prod
     };
     
-    static let useCDN = false;
-    static let environment = ENVIRONMENT.local;
-    static let prefetchThumbnailsOnAppLoad = false;
-    static let prefetchNextPage = true;
+    static let useCDN = true;
+    static let environment = ENVIRONMENT.prod;
+    static let prefetchThumbnailsOnAppLoad = true;
+    static let prefetchNextPage = false;
     
     static let apiRoot: String = (environment == ENVIRONMENT.prod) ? "https://wayfarer-backend.herokuapp.com/" : "http://localhost:9000/";
     static let staticResourcesRoot: String = (environment == ENVIRONMENT.prod && useCDN) ? "https://d314oora7wgipi.cloudfront.net/" : apiRoot;
