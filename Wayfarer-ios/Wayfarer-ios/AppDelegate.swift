@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (Globals.prefetchThumbnailsOnAppLoad) {
             self.prefetchThumbnails();
         }
-        
+        var navigationController = window?.rootViewController as? UINavigationController;
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Dual", size: 19)!]
         return true
     }
     

@@ -14,6 +14,8 @@
 		110C61171A9A95A000548FAA /* Wayfarer_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */; };
 		11169D8C1AE4903D004C68FA /* WayInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11169D8B1AE4903D004C68FA /* WayInProgressViewController.swift */; };
 		111F58B71ADB5F5A004A3E49 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F58B61ADB5F5A004A3E49 /* Globals.swift */; };
+		1121640F1AF6AE7500A67797 /* TaskItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121640E1AF6AE7500A67797 /* TaskItemButton.swift */; };
+		112164111AF6EF6E00A67797 /* WayFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112164101AF6EF6E00A67797 /* WayFinishedViewController.swift */; };
 		115D8E971AC6821500F4F2E8 /* Way.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E961AC6821500F4F2E8 /* Way.swift */; };
 		115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E991AC6842800F4F2E8 /* DataImporter.swift */; };
 		115D8E9C1AC6848700F4F2E8 /* WaysContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */; };
@@ -51,6 +53,8 @@
 		110C61161A9A95A000548FAA /* Wayfarer_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wayfarer_iosTests.swift; sourceTree = "<group>"; };
 		11169D8B1AE4903D004C68FA /* WayInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayInProgressViewController.swift; sourceTree = "<group>"; };
 		111F58B61ADB5F5A004A3E49 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		1121640E1AF6AE7500A67797 /* TaskItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemButton.swift; sourceTree = "<group>"; };
+		112164101AF6EF6E00A67797 /* WayFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayFinishedViewController.swift; sourceTree = "<group>"; };
 		115D8E961AC6821500F4F2E8 /* Way.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Way.swift; sourceTree = "<group>"; };
 		115D8E991AC6842800F4F2E8 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
 		115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaysContext.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				110C61091A9A95A000548FAA /* LaunchScreen.xib */,
 				110C60FE1A9A95A000548FAA /* Supporting Files */,
 				111F58B61ADB5F5A004A3E49 /* Globals.swift */,
+				112164121AF6EF7900A67797 /* WayFinished */,
 			);
 			path = "Wayfarer-ios";
 			sourceTree = "<group>";
@@ -152,8 +157,17 @@
 			isa = PBXGroup;
 			children = (
 				11169D8B1AE4903D004C68FA /* WayInProgressViewController.swift */,
+				1121640E1AF6AE7500A67797 /* TaskItemButton.swift */,
 			);
 			name = WayInProgress;
+			sourceTree = "<group>";
+		};
+		112164121AF6EF7900A67797 /* WayFinished */ = {
+			isa = PBXGroup;
+			children = (
+				112164101AF6EF6E00A67797 /* WayFinishedViewController.swift */,
+			);
+			name = WayFinished;
 			sourceTree = "<group>";
 		};
 		115D8E951AC681FE00F4F2E8 /* Models */ = {
@@ -309,10 +323,12 @@
 				1186413C1ACF5E230094A9D7 /* CollectionView.swift in Sources */,
 				115D8E971AC6821500F4F2E8 /* Way.swift in Sources */,
 				11169D8C1AE4903D004C68FA /* WayInProgressViewController.swift in Sources */,
+				112164111AF6EF6E00A67797 /* WayFinishedViewController.swift in Sources */,
 				115D8E9C1AC6848700F4F2E8 /* WaysContext.swift in Sources */,
 				118641431AD0C79F0094A9D7 /* WayDetailViewController.swift in Sources */,
 				1186413A1ACF5AB50094A9D7 /* CollectionViewCell.swift in Sources */,
 				115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */,
+				1121640F1AF6AE7500A67797 /* TaskItemButton.swift in Sources */,
 				11D993401AEF2CA700C207EC /* WayUser.swift in Sources */,
 				118641381ACF5AA00094A9D7 /* CollectionViewController.swift in Sources */,
 				111F58B71ADB5F5A004A3E49 /* Globals.swift in Sources */,
