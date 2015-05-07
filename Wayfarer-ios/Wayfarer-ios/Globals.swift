@@ -16,7 +16,7 @@ struct Globals {
     };
     
     static let useCDN = true;
-    static let environment = ENVIRONMENT.prod;
+    static let environment = ENVIRONMENT.local;
     static let prefetchThumbnailsOnAppLoad = true;
     static let prefetchNextPage = false;
     

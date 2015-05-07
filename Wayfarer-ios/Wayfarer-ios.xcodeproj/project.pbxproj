@@ -16,6 +16,7 @@
 		111F58B71ADB5F5A004A3E49 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F58B61ADB5F5A004A3E49 /* Globals.swift */; };
 		1121640F1AF6AE7500A67797 /* TaskItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121640E1AF6AE7500A67797 /* TaskItemButton.swift */; };
 		112164111AF6EF6E00A67797 /* WayFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112164101AF6EF6E00A67797 /* WayFinishedViewController.swift */; };
+		1155DDF51AF963CE008A08CD /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155DDF41AF963CE008A08CD /* UIHelper.swift */; };
 		115D8E971AC6821500F4F2E8 /* Way.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E961AC6821500F4F2E8 /* Way.swift */; };
 		115D8E9A1AC6842800F4F2E8 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E991AC6842800F4F2E8 /* DataImporter.swift */; };
 		115D8E9C1AC6848700F4F2E8 /* WaysContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */; };
@@ -26,6 +27,7 @@
 		11BAA8E21AD228950053164F /* CDType - Dual 600.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11BAA8E11AD228950053164F /* CDType - Dual 600.otf */; };
 		11BAA8E41AD228C40053164F /* CDType - Dual 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */; };
 		11BAA8E61AD22E990053164F /* DashedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA8E51AD22E990053164F /* DashedSeparator.swift */; };
+		11D5CD771AFBF6DA009EAD91 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5CD761AFBF6DA009EAD91 /* FiltersViewController.swift */; };
 		11D9933C1AEEE6F800C207EC /* HttpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9933B1AEEE6F800C207EC /* HttpUtil.swift */; };
 		11D9933E1AEF0C7C00C207EC /* WayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9933D1AEF0C7C00C207EC /* WayAPI.swift */; };
 		11D993401AEF2CA700C207EC /* WayUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D9933F1AEF2CA700C207EC /* WayUser.swift */; };
@@ -55,6 +57,7 @@
 		111F58B61ADB5F5A004A3E49 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		1121640E1AF6AE7500A67797 /* TaskItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemButton.swift; sourceTree = "<group>"; };
 		112164101AF6EF6E00A67797 /* WayFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayFinishedViewController.swift; sourceTree = "<group>"; };
+		1155DDF41AF963CE008A08CD /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		115D8E961AC6821500F4F2E8 /* Way.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Way.swift; sourceTree = "<group>"; };
 		115D8E991AC6842800F4F2E8 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
 		115D8E9B1AC6848700F4F2E8 /* WaysContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaysContext.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		11BAA8E11AD228950053164F /* CDType - Dual 600.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CDType - Dual 600.otf"; sourceTree = "<group>"; };
 		11BAA8E31AD228C40053164F /* CDType - Dual 300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CDType - Dual 300.ttf"; sourceTree = "<group>"; };
 		11BAA8E51AD22E990053164F /* DashedSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedSeparator.swift; sourceTree = "<group>"; };
+		11D5CD761AFBF6DA009EAD91 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		11D9933B1AEEE6F800C207EC /* HttpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtil.swift; sourceTree = "<group>"; };
 		11D9933D1AEF0C7C00C207EC /* WayAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayAPI.swift; sourceTree = "<group>"; };
 		11D9933F1AEF2CA700C207EC /* WayUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayUser.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				118641371ACF5AA00094A9D7 /* CollectionViewController.swift */,
 				118641391ACF5AB50094A9D7 /* CollectionViewCell.swift */,
 				1186413B1ACF5E230094A9D7 /* CollectionView.swift */,
+				11D5CD761AFBF6DA009EAD91 /* FiltersViewController.swift */,
 			);
 			name = Discovery;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				11D9933B1AEEE6F800C207EC /* HttpUtil.swift */,
 				11D9933D1AEF0C7C00C207EC /* WayAPI.swift */,
+				1155DDF41AF963CE008A08CD /* UIHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -331,9 +337,11 @@
 				1121640F1AF6AE7500A67797 /* TaskItemButton.swift in Sources */,
 				11D993401AEF2CA700C207EC /* WayUser.swift in Sources */,
 				118641381ACF5AA00094A9D7 /* CollectionViewController.swift in Sources */,
+				1155DDF51AF963CE008A08CD /* UIHelper.swift in Sources */,
 				111F58B71ADB5F5A004A3E49 /* Globals.swift in Sources */,
 				11D9933E1AEF0C7C00C207EC /* WayAPI.swift in Sources */,
 				110C61011A9A95A000548FAA /* AppDelegate.swift in Sources */,
+				11D5CD771AFBF6DA009EAD91 /* FiltersViewController.swift in Sources */,
 				11D9933C1AEEE6F800C207EC /* HttpUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

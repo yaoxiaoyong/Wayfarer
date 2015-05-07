@@ -13,14 +13,17 @@ let reuseIdentifier = "ExperimentCell"
 class CollectionViewController: UICollectionViewController {
     
     var context: WaysContext?
+    let showFilterBar = true;
+    let filterBarHeight:CGFloat = 20;
+    var showFiltersButton: UIButton!;
 
     override func viewDidLoad() {
-        self.context = AppDelegate.Context;
         super.viewDidLoad()
+        self.context = AppDelegate.Context;
 
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.Horizontal;
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
+        layout.sectionInset = UIEdgeInsets(top: filterBarHeight, left: 0, bottom: 0, right: 0);
         
         layout.minimumLineSpacing = CGFloat(2);
         layout.minimumInteritemSpacing = CGFloat(1);
@@ -28,21 +31,54 @@ class CollectionViewController: UICollectionViewController {
         collectionView!.setCollectionViewLayout(layout, animated: true);
         collectionView!.backgroundColor = UIColor.whiteColor();
         
+        var size = CGSize(
+            width: collectionView!.frame.width / 2,
+            height: (collectionView!.frame.height) / 3
+        );
         
+        layout.itemSize = size;
+
+        if (self.showFilterBar) {
+            addFilterBar();
+        }
+    }
+    
+    func addFilterBar() {
         var navBarHeight: CGFloat = 0;
         if (self.navigationController != nil) {
             navBarHeight = self.navigationController!.navigationBar.frame.height;
             navBarHeight += UIApplication.sharedApplication().statusBarFrame.size.height;
         }
-        
-        
-        
-        var size = CGSize(
-            width: collectionView!.frame.width / 2,
-            height: (collectionView!.frame.height - navBarHeight) / 3
+//        var subv = UIView(frame: CGRectMake(
+//            self.navigationController!.navigationBar.frame.origin.x,
+//            (self.collectionView!.frame.origin.y) + navBarHeight,
+//            self.collectionView!.frame.size.width,
+//            self.filterBarHeight)
+//        );
+        var subv = UIView(frame: CGRectMake(
+            0,
+            0,
+            self.collectionView!.frame.size.width,
+            self.filterBarHeight)
         );
+
+        subv.backgroundColor = UIColor.whiteColor()
         
-        layout.itemSize = size;
+        collectionView?.superview?.addSubview(subv);
+        var filterViewController = UIViewController();
+        filterViewController.view = subv;
+        showFiltersButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton;
+        showFiltersButton.addTarget(self, action: "handleShowFilters", forControlEvents: UIControlEvents.TouchUpInside)
+        showFiltersButton.frame = subv.bounds;
+        showFiltersButton.titleLabel?.font = UIFont(name: "Dual", size: 15)
+        showFiltersButton.setTitleColor(UIHelper.greenColor, forState: UIControlState.Normal)
+        showFiltersButton.titleEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 5, right: 0);
+        showFiltersButton.setTitle("Show Filters", forState: UIControlState.Normal);
+        subv.addSubview(showFiltersButton);
+    }
+    
+    func handleShowFilters () {
+        print("handleShowFilters called");
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,7 +157,7 @@ class CollectionViewController: UICollectionViewController {
         
         var size = CGSize(
             width: collectionView.frame.width / 2 - 2,
-            height: floor((collectionView.frame.height - navBarHeight) / 3 - 0.5)
+            height: floor(((collectionView.frame.height - filterBarHeight) / 3) - 1)
         );
             
         return size;

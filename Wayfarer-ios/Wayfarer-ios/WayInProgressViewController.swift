@@ -54,7 +54,6 @@ class WayInProgressViewController: UIViewController {
         backButton.setImage(UIImage(named: "back_arrow"), forState: UIControlState.Normal);
         backButton.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3 , bottom: 3, right: 3)
         backButton.addTarget(self, action: "handleBackButtonPress", forControlEvents: UIControlEvents.TouchUpInside)
-        //self.navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton);
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton);
     }
     

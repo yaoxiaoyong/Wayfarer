@@ -23,7 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.prefetchThumbnails();
         }
         var navigationController = window?.rootViewController as? UINavigationController;
+        navigationController?.navigationBar.backgroundColor = UIColor.whiteColor();
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Dual", size: 19)!]
+
+        var whiteOverlay = UIView(frame: CGRectMake(
+            navigationController!.navigationBar.frame.origin.x,
+            navigationController!.navigationBar.frame.size.height,
+            navigationController!.view.frame.size.width,
+            1)
+        );
+        whiteOverlay.backgroundColor = UIColor.whiteColor()
+        navigationController?.navigationBar.addSubview(whiteOverlay)
         return true
     }
     
