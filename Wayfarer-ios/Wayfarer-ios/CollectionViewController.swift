@@ -13,17 +13,18 @@ let reuseIdentifier = "ExperimentCell"
 class CollectionViewController: UICollectionViewController {
     
     var context: WaysContext?
-    let showFilterBar = true;
-    let filterBarHeight:CGFloat = 20;
+    let showFilterBar = false;
+    var filterBarHeight: CGFloat!;
     var showFiltersButton: UIButton!;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.context = AppDelegate.Context;
-
+        
+        filterBarHeight = showFilterBar ? 20 : 0;
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.Horizontal;
-        layout.sectionInset = UIEdgeInsets(top: filterBarHeight, left: 0, bottom: 0, right: 0);
+        layout.sectionInset = UIEdgeInsets(top: filterBarHeight, left: 1, bottom: 0, right: 0);
         
         layout.minimumLineSpacing = CGFloat(2);
         layout.minimumInteritemSpacing = CGFloat(1);
@@ -112,7 +113,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
         let count = context!.getCount();
-        return count + count % 6;
+        return 54;//count + count % 6;
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -123,6 +124,8 @@ class CollectionViewController: UICollectionViewController {
         cell.setWayModel(wayModel);
         if (wayModel != nil) {
             wayModel!.fetchImage(is2x: false, isAsync: true, callback: cell.setImage)
+        } else {
+            cell.backgroundColor = UIColor(red: 41 / 256, green: 49 / 256, blue: 65 / 256, alpha: 1);
         }
         if (Globals.prefetchNextPage) {
             prefetchNextPageImages(indexPath.row);
@@ -154,7 +157,7 @@ class CollectionViewController: UICollectionViewController {
             navBarHeight = self.navigationController!.navigationBar.frame.height;
             navBarHeight += UIApplication.sharedApplication().statusBarFrame.size.height;
         }
-        
+            
         var size = CGSize(
             width: collectionView.frame.width / 2 - 2,
             height: floor(((collectionView.frame.height - filterBarHeight) / 3) - 1)
