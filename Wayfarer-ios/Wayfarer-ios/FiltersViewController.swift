@@ -10,8 +10,11 @@ import UIKit
 
 class FiltersViewController: UIViewController {
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundImageView.sizeToFit();
 
         // Do any additional setup after loading the view.
     }

@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func getOrCreateUUID() -> (Int, Bool) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var UUIDObject: AnyObject? = userDefaults.objectForKey("ApplicationUniqueIdentifier");
-        if UUIDObject == nil {
+        if UUIDObject == nil || Globals.dropCreateUserAlways {
             var user = WayAPI.createNewUser()
             var UUID = user!.id!
             userDefaults.setObject(UUID, forKey: "ApplicationUniqueIdentifier")

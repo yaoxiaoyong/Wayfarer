@@ -19,7 +19,7 @@ struct Globals {
     static let environment = ENVIRONMENT.prod;
     static let prefetchThumbnailsOnAppLoad = true;
     static let prefetchNextPage = false;
-    
+    static let dropCreateUserAlways = false; 
     static let apiRoot: String = (environment == ENVIRONMENT.prod) ? "https://wayfarer-backend.herokuapp.com/" : "http://localhost:9000/";
     static let staticResourcesRoot: String = (environment == ENVIRONMENT.prod && useCDN) ? "https://d314oora7wgipi.cloudfront.net/" : apiRoot;
 }

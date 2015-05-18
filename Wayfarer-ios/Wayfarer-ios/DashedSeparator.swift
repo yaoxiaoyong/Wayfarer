@@ -11,6 +11,7 @@ import UIKit
 class DashedSeparator: UIView {
     
     var verticalSections: Int = 150;
+    var color: UIColor = UIHelper.greenColor;
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
@@ -24,11 +25,9 @@ class DashedSeparator: UIView {
         CGContextClearRect(context,rect)
         CGContextSetLineWidth(context, 2.0)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let greenComponents: [CGFloat] = [55.0 / 256.0, 209.0 / 256.0, 139.0 / 256.0, 1.0]
         let clearComponents: [CGFloat] = [1, 1, 1, 0.0]
-        let greenColor = CGColorCreate(colorSpace, greenComponents)
         let clearColor = CGColorCreate(colorSpace, clearComponents)
-        CGContextSetStrokeColorWithColor(context, greenColor);
+        CGContextSetStrokeColorWithColor(context, color.CGColor);
         
         var lastX: CGFloat = 0;
         
@@ -39,7 +38,7 @@ class DashedSeparator: UIView {
             let x: CGFloat = CGFloat(Double(Double(interval) * Double(index)));
             let y: CGFloat = 0.0;
             if (index % 2 == 1 ) {
-                CGContextSetStrokeColorWithColor(context, greenColor);
+                CGContextSetStrokeColorWithColor(context, color.CGColor);
 
             } else {
                 CGContextSetStrokeColorWithColor(context, clearColor);

@@ -207,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				118641421AD0C79F0094A9D7 /* WayDetailViewController.swift */,
-				11BAA8E51AD22E990053164F /* DashedSeparator.swift */,
 			);
 			name = WayDetail;
 			sourceTree = "<group>";
@@ -218,6 +217,7 @@
 				11D9933B1AEEE6F800C207EC /* HttpUtil.swift */,
 				11D9933D1AEF0C7C00C207EC /* WayAPI.swift */,
 				1155DDF41AF963CE008A08CD /* UIHelper.swift */,
+				11BAA8E51AD22E990053164F /* DashedSeparator.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

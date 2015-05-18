@@ -13,7 +13,7 @@ let reuseIdentifier = "ExperimentCell"
 class CollectionViewController: UICollectionViewController {
     
     var context: WaysContext?
-    let showFilterBar = false;
+    let showFilterBar = true;
     var filterBarHeight: CGFloat!;
     var showFiltersButton: UIButton!;
 
@@ -50,12 +50,7 @@ class CollectionViewController: UICollectionViewController {
             navBarHeight = self.navigationController!.navigationBar.frame.height;
             navBarHeight += UIApplication.sharedApplication().statusBarFrame.size.height;
         }
-//        var subv = UIView(frame: CGRectMake(
-//            self.navigationController!.navigationBar.frame.origin.x,
-//            (self.collectionView!.frame.origin.y) + navBarHeight,
-//            self.collectionView!.frame.size.width,
-//            self.filterBarHeight)
-//        );
+
         var subv = UIView(frame: CGRectMake(
             0,
             0,
@@ -66,8 +61,6 @@ class CollectionViewController: UICollectionViewController {
         subv.backgroundColor = UIColor.whiteColor()
         
         collectionView?.superview?.addSubview(subv);
-        var filterViewController = UIViewController();
-        filterViewController.view = subv;
         showFiltersButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton;
         showFiltersButton.addTarget(self, action: "handleShowFilters", forControlEvents: UIControlEvents.TouchUpInside)
         showFiltersButton.frame = subv.bounds;
@@ -79,7 +72,16 @@ class CollectionViewController: UICollectionViewController {
     }
     
     func handleShowFilters () {
-        print("handleShowFilters called");
+        showFilterSelectionScreen();
+    }
+    
+    func showFilterSelectionScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("FiltersViewController") as! FiltersViewController;
+        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+        self.addChildViewController(vc);
+        collectionView?.superview?.addSubview(vc.view);
+        vc.didMoveToParentViewController(self);
     }
 
     override func didReceiveMemoryWarning() {
