@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController?.navigationBar.backgroundColor = UIColor.whiteColor();
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Dual", size: 19)!]
 
+        if navigationController != nil {
         var whiteOverlay = UIView(frame: CGRectMake(
             navigationController!.navigationBar.frame.origin.x,
             navigationController!.navigationBar.frame.size.height,
@@ -33,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             1)
         );
         whiteOverlay.backgroundColor = UIColor.whiteColor()
-        navigationController?.navigationBar.addSubview(whiteOverlay)
+        navigationController!.navigationBar.addSubview(whiteOverlay)
+        }
         return true
     }
     

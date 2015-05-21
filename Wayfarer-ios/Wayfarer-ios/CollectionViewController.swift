@@ -78,8 +78,9 @@ class CollectionViewController: UICollectionViewController {
     func showFilterSelectionScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("FiltersViewController") as! FiltersViewController;
-        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+//        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
         self.addChildViewController(vc);
+        vc.view.frame = collectionView!.frame
         collectionView?.superview?.addSubview(vc.view);
         vc.didMoveToParentViewController(self);
     }
